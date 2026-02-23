@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eduardo Javier Oña Chiriboga – IS Engineer</title>
+    <meta
+      name="description"
+      content="Virtual CV of Eduardo Javier Oña Chiriboga, Information Systems Engineer – Portfolio, Experience, Projects, and Education."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feather Icons CDN -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ═══════════════════════════
+       MOBILE HEADER
+  ════════════════════════════════ -->
+    <header class="mobile-header" id="mobile-header">
+      <div class="mobile-header__brand">
+        <span class="mobile-header__name">Eduardo Oña</span>
+        <span class="mobile-header__title">IS Engineer</span>
+      </div>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div
+      class="nav-overlay"
+      id="nav-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigation"
+    >
+      <button class="nav-overlay__close" id="nav-close" aria-label="Close menu">
+        <i data-feather="x"></i>
+      </button>
+      <nav class="nav-overlay__nav">
+        <ul>
+          <li>
+            <a href="#" class="nav-link active" data-section="about"
+              >About Me</a
+            >
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-section="experience"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-section="projects">Projects</a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-section="education"
+              >Education & Speaking</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <a
+        href="cv_eduardo_ona.pdf"
+        download
+        class="btn-download btn-download--overlay"
+      >
+        <i data-feather="download"></i> Download CV
+      </a>
+    </div>
+
+    <!-- ═══════════════════════════
+       MAIN LAYOUT
+  ════════════════════════════════ -->
+    <div class="app-layout">
+      <!-- ──────────────────────────
+         LEFT SIDEBAR
+    ─────────────────────────────── -->
+      <aside class="sidebar" id="sidebar">
+        <!-- Floating particles inside sidebar -->
+        <div class="sidebar__particles" aria-hidden="true">
+          <span class="particle"></span>
+          <span class="particle"></span>
+          <span class="particle"></span>
+        </div>
+
+        <!-- Profile -->
+        <div class="sidebar__profile">
+          <div class="profile-pic-wrapper float-hover">
+            <div class="profile-pic">
+              <svg
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <circle cx="50" cy="38" r="22" fill="#4fc3f7" />
+                <ellipse cx="50" cy="82" rx="30" ry="20" fill="#4fc3f7" />
+              </svg>
+            </div>
+            <div class="profile-pic__ring"></div>
+          </div>
+          <h1 class="sidebar__name">Eduardo Javier<br />Oña Chiriboga</h1>
+          <p class="sidebar__role">Information Systems Engineer</p>
+        </div>
+
+        <!-- Social Links -->
+        <div class="sidebar__socials">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            aria-label="LinkedIn profile"
+          >
+            <i data-feather="linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            aria-label="GitHub profile"
+          >
+            <i data-feather="github"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+
+        <hr class="sidebar__divider" />
+
+        <!-- Navigation -->
+        <nav class="sidebar__nav" aria-label="Main navigation">
+          <ul>
+            <li>
+              <a
+                href="#"
+                class="nav-link active"
+                data-section="about"
+                id="nav-about"
+              >
+                <i data-feather="user"></i>
+                <span>About Me</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-link"
+                data-section="experience"
+                id="nav-experience"
+              >
+                <i data-feather="briefcase"></i>
+                <span>Experience</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-link"
+                data-section="projects"
+                id="nav-projects"
+              >
+                <i data-feather="code"></i>
+                <span>Projects</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-link"
+                data-section="education"
+                id="nav-education"
+              >
+                <i data-feather="award"></i>
+                <span>Education & Speaking</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Download CV -->
+        <div class="sidebar__footer">
+          <a href="cv_eduardo_ona.pdf" download class="btn-download">
+            <i data-feather="download-cloud"></i>
+            <span>Download CV (PDF)</span>
+          </a>
+        </div>
+      </aside>
+      <!-- /sidebar -->
+
+      <!-- ──────────────────────────
+         RIGHT CONTENT
+    ─────────────────────────────── -->
+      <main class="content" id="main-content" role="main">
+        <!-- Floating orbital decorations -->
+        <div class="content__orbs" aria-hidden="true">
+          <div class="orb orb--1"></div>
+          <div class="orb orb--2"></div>
+          <div class="orb orb--3"></div>
+        </div>
+
+        <!-- ── ABOUT ME ── -->
+        <section
+          class="section active"
+          id="section-about"
+          aria-labelledby="about-heading"
+        >
+          <div class="section__header">
+            <span class="section__tag">HELLO WORLD</span>
+            <h2 class="section__title" id="about-heading">About Me</h2>
+            <p class="section__subtitle">
+              Passionate engineer. Problem solver. System thinker.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="glass-card about-card">
+              <p class="about-text">
+                I'm <strong>Eduardo Javier Oña Chiriboga</strong>, an
+                Information Systems Engineer graduated from
+                <strong
+                  >Pontificia Universidad Católica del Ecuador Sede Ambato
+                  (PUCESA)</strong
+                >. My drive is rooted in a genuine passion for technology — from
+                designing resilient system architectures to automating workflows
+                and ensuring data integrity across complex environments.
+              </p>
+              <p class="about-text">
+                I thrive at the intersection of analytical thinking and
+                technical execution. Whether it's diagnosing critical
+                infrastructure failures, architecting multi-dimensional
+                databases, or building interactive web experiences from scratch,
+                I approach every challenge with rigour, creativity, and a
+                commitment to clean, efficient solutions.
+              </p>
+              <p class="about-text">
+                I believe technology is most powerful when it's invisible — when
+                systems work so seamlessly that users never have to think about
+                them. That's the standard I hold myself to.
+              </p>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-card glass-card float-hover">
+                <i data-feather="cpu"></i>
+                <span class="stat-card__number">3+</span>
+                <span class="stat-card__label">Years in IT</span>
+              </div>
+              <div class="stat-card glass-card float-hover">
+                <i data-feather="layers"></i>
+                <span class="stat-card__number">5+</span>
+                <span class="stat-card__label">Projects Built</span>
+              </div>
+              <div class="stat-card glass-card float-hover">
+                <i data-feather="mic"></i>
+                <span class="stat-card__number">2+</span>
+                <span class="stat-card__label">Conferences</span>
+              </div>
+              <div class="stat-card glass-card float-hover">
+                <i data-feather="database"></i>
+                <span class="stat-card__number">100%</span>
+                <span class="stat-card__label">Committed</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-section">
+            <h3 class="skills-title">Core Competencies</h3>
+            <div class="skills-list">
+              <span class="skill-tag">System Architecture</span>
+              <span class="skill-tag">Network Infrastructure</span>
+              <span class="skill-tag">Data Warehousing</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML5 / CSS3</span>
+              <span class="skill-tag">ERP Systems</span>
+              <span class="skill-tag">SQL / Database Design</span>
+              <span class="skill-tag">IT Support</span>
+              <span class="skill-tag">Electronic Billing</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── EXPERIENCE ── -->
+        <section
+          class="section"
+          id="section-experience"
+          aria-labelledby="exp-heading"
+          hidden
+        >
+          <div class="section__header">
+            <span class="section__tag">CAREER PATH</span>
+            <h2 class="section__title" id="exp-heading">Experience</h2>
+            <p class="section__subtitle">
+              A track record built on real-world technical challenges.
+            </p>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline__item glass-card">
+              <div class="timeline__dot">
+                <i data-feather="monitor"></i>
+              </div>
+              <div class="timeline__content">
+                <div class="timeline__meta">
+                  <span class="timeline__period">2022 – Present</span>
+                  <span class="timeline__company">PUCESA</span>
+                </div>
+                <h3 class="timeline__role">
+                  IT Support & Infrastructure Analyst
+                </h3>
+                <ul class="timeline__bullets">
+                  <li>
+                    Preventive and corrective maintenance of hardware and
+                    software assets across the institution.
+                  </li>
+                  <li>
+                    Provided multi-level technical support to faculty and
+                    administrative staff, reducing downtime.
+                  </li>
+                  <li>
+                    Ensured network infrastructure continuity, managing LAN/WAN
+                    configurations and fault resolution.
+                  </li>
+                  <li>
+                    Documented procedures and contributed to the institution's
+                    IT knowledge base.
+                  </li>
+                </ul>
+                <div class="timeline__tags">
+                  <span>Hardware</span><span>Networking</span
+                  ><span>Help Desk</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline__item glass-card">
+              <div class="timeline__dot">
+                <i data-feather="file-text"></i>
+              </div>
+              <div class="timeline__content">
+                <div class="timeline__meta">
+                  <span class="timeline__period">2020 – 2022</span>
+                  <span class="timeline__company">Gas Station Sector</span>
+                </div>
+                <h3 class="timeline__role">Billing Systems & Data Auditor</h3>
+                <ul class="timeline__bullets">
+                  <li>
+                    Managed electronic billing entry and validation within ERP
+                    systems for daily operations.
+                  </li>
+                  <li>
+                    Performed daily transaction auditing to detect discrepancies
+                    and ensure data integrity.
+                  </li>
+                  <li>
+                    Generated detailed financial reconciliation reports for
+                    management review.
+                  </li>
+                  <li>
+                    Streamlined data input processes, reducing error rates in
+                    billing records.
+                  </li>
+                </ul>
+                <div class="timeline__tags">
+                  <span>ERP</span><span>Data Auditing</span
+                  ><span>e-Billing</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline__item glass-card">
+              <div class="timeline__dot">
+                <i data-feather="users"></i>
+              </div>
+              <div class="timeline__content">
+                <div class="timeline__meta">
+                  <span class="timeline__period">2018 – 2020</span>
+                  <span class="timeline__company">Cafeteria</span>
+                </div>
+                <h3 class="timeline__role">Customer Service Representative</h3>
+                <ul class="timeline__bullets">
+                  <li>
+                    Delivered high-quality service in fast-paced, high-pressure
+                    environments.
+                  </li>
+                  <li>
+                    Developed strong conflict-resolution and interpersonal
+                    communication skills.
+                  </li>
+                  <li>
+                    Fostered teamwork and contributed to process improvement for
+                    service efficiency.
+                  </li>
+                </ul>
+                <div class="timeline__tags">
+                  <span>Soft Skills</span><span>Teamwork</span
+                  ><span>Communication</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /timeline -->
+        </section>
+
+        <!-- ── PROJECTS ── -->
+        <section
+          class="section"
+          id="section-projects"
+          aria-labelledby="proj-heading"
+          hidden
+        >
+          <div class="section__header">
+            <span class="section__tag">BUILT BY ME</span>
+            <h2 class="section__title" id="proj-heading">Projects</h2>
+            <p class="section__subtitle">
+              Ideas turned into interactive, functional solutions.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card glass-card float-hover" tabindex="0">
+              <div class="project-card__icon">
+                <i data-feather="globe"></i>
+              </div>
+              <span class="project-card__category">Web Development</span>
+              <h3 class="project-card__title">
+                Interactive Birthday Card Website
+              </h3>
+              <p class="project-card__desc">
+                A fully custom, animated birthday card website built with
+                <strong>HTML5, CSS3, and JavaScript</strong>. Features dynamic
+                DOM manipulation, responsive design, and CSS keyframe animations
+                for a delightful interactive experience — demonstrating
+                front-end fundamentals at their finest.
+              </p>
+              <div class="project-card__stack">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span
+                ><span>DOM API</span>
+              </div>
+            </article>
+
+            <article class="project-card glass-card float-hover" tabindex="0">
+              <div class="project-card__icon">
+                <i data-feather="terminal"></i>
+              </div>
+              <span class="project-card__category">Python / Automation</span>
+              <h3 class="project-card__title">Advanced ASCII Art Generator</h3>
+              <p class="project-card__desc">
+                A Python application that converts images and text into
+                high-fidelity ASCII art. Leverages complex
+                <strong
+                  >string manipulation, algorithmic image processing</strong
+                >, and a custom brightness-to-character mapping system — a
+                showcase of low-level logical thinking and algorithmic design.
+              </p>
+              <div class="project-card__stack">
+                <span>Python 3</span><span>Algorithms</span
+                ><span>Image Processing</span><span>CLI</span>
+              </div>
+            </article>
+
+            <article class="project-card glass-card float-hover" tabindex="0">
+              <div class="project-card__icon">
+                <i data-feather="database"></i>
+              </div>
+              <span class="project-card__category">Database Architecture</span>
+              <h3 class="project-card__title">Data Warehouse Schema Design</h3>
+              <p class="project-card__desc">
+                Full conceptual design and multidimensional modeling of a data
+                warehouse, including the implementation of
+                <strong>Star and Snowflake schemas</strong>. Authored the full
+                ERD, defined fact and dimension tables, and validated the model
+                against business intelligence queries.
+              </p>
+              <div class="project-card__stack">
+                <span>SQL</span><span>Star Schema</span
+                ><span>Snowflake Schema</span><span>BI</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ── EDUCATION & SPEAKING ── -->
+        <section
+          class="section"
+          id="section-education"
+          aria-labelledby="edu-heading"
+          hidden
+        >
+          <div class="section__header">
+            <span class="section__tag">KNOWLEDGE & VOICE</span>
+            <h2 class="section__title" id="edu-heading">
+              Education & Speaking
+            </h2>
+            <p class="section__subtitle">
+              Academic foundation and sharing expertise with the community.
+            </p>
+          </div>
+
+          <div class="edu-grid">
+            <div class="edu-card glass-card">
+              <div class="edu-card__icon float-hover">
+                <i data-feather="book-open"></i>
+              </div>
+              <div class="edu-card__content">
+                <span class="edu-card__type">BACHELOR'S DEGREE</span>
+                <h3 class="edu-card__title">Information Systems Engineer</h3>
+                <p class="edu-card__institution">
+                  Pontificia Universidad Católica del Ecuador Sede Ambato<br />
+                  <strong>(PUCESA)</strong> — Ambato, Ecuador
+                </p>
+                <p class="edu-card__detail">
+                  Comprehensive training in systems analysis, software
+                  engineering, database architecture, network administration,
+                  and project management. Graduated with a focus on applied
+                  technology and real-world problem solving.
+                </p>
+              </div>
+            </div>
+
+            <div class="speaking-area">
+              <h3 class="speaking-area__title">
+                <i data-feather="mic"></i> Speaking Engagements
+              </h3>
+              <div class="speaking-cards">
+                <div class="speaking-card glass-card float-hover">
+                  <div class="speaking-card__badge">
+                    <i data-feather="radio"></i>
+                  </div>
+                  <div>
+                    <h4>Technology Conference Presenter</h4>
+                    <p>
+                      Certified speaker and presenter at regional technology and
+                      academic conferences, sharing insights on information
+                      systems and emerging technologies.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="speaking-card glass-card float-hover">
+                  <div class="speaking-card__badge">
+                    <i data-feather="award"></i>
+                  </div>
+                  <div>
+                    <h4>Academic Symposium Speaker</h4>
+                    <p>
+                      Participated as a speaker in academic symposiums,
+                      presenting research and technical projects to faculty,
+                      peers, and industry professionals.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- /content -->
+    </div>
+    <!-- /app-layout -->
+
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
