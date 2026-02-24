@@ -14,6 +14,7 @@
     initFloatingCards();
     initHamburger();
     initSkillStagger();
+    initDynamicStats();   // ← counts DOM items at runtime
   });
 
   /* ─── SECTION NAVIGATION ───────────────────────────── */
@@ -72,7 +73,7 @@
 
     // Stagger children
     const children = section.querySelectorAll(
-      '.glass-card, .project-card, .timeline__item, .skill-tag, .edu-card, .speaking-card, .stat-card'
+      '.glass-card, .project-card, .timeline__item, .skill-tag, .edu-card, .speaking-card, .stat-card, .cert-card'
     );
     children.forEach((el, i) => {
       el.style.animationDelay = `${i * 80}ms`;
@@ -128,7 +129,7 @@
 
   /* ─── FLOATING CARD PHYSICS (tilt on hover) ─────────── */
   function initFloatingCards() {
-    const cards = document.querySelectorAll('.project-card, .stat-card');
+    const cards = document.querySelectorAll('.project-card, .stat-card, .cert-card');
     cards.forEach(card => {
       card.addEventListener('mousemove', e => {
         const rect   = card.getBoundingClientRect();
@@ -186,6 +187,31 @@
     document.body.style.overflow = '';
   }
 
+  /* ─── DYNAMIC STATS ─────────────────────────────────── */
+  function initDynamicStats() {
+    // Years in IT: difference between current year and career start year
+    const IT_START_YEAR = 2021;
+    const yearsEl = document.getElementById('stat-years');
+    if (yearsEl) {
+      const years = new Date().getFullYear() - IT_START_YEAR;
+      yearsEl.textContent = years + '+';
+    }
+
+    // Projects: count .project-item elements in the DOM
+    const projectsEl = document.getElementById('stat-projects');
+    if (projectsEl) {
+      const count = document.querySelectorAll('.project-item').length;
+      projectsEl.textContent = count;
+    }
+
+    // Speaking engagements: count .speaking-item elements in the DOM
+    const speakingEl = document.getElementById('stat-speaking');
+    if (speakingEl) {
+      const count = document.querySelectorAll('.speaking-item').length;
+      speakingEl.textContent = count;
+    }
+  }
+
   /* ─── SKILL TAG STAGGER ────────────────────────────── */
   function initSkillStagger() {
     const tags = document.querySelectorAll('.skill-tag');
@@ -208,7 +234,7 @@
     }, { threshold: 0.12 });
 
     // Observe timeline items and cards that weren't in initial view
-    document.querySelectorAll('.timeline__item, .speaking-card').forEach(el => {
+    document.querySelectorAll('.timeline__item, .speaking-card, .cert-card').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(24px)';
       el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
