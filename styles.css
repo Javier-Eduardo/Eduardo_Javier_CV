@@ -257,10 +257,17 @@ body::before {
   overflow: hidden;
   position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.profile-pic svg {
+.profile-pic__img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center top; /* keeps face in frame for portrait photos */
+  border-radius: 50%;
+  display: block;
 }
 .profile-pic__ring {
   position: absolute;

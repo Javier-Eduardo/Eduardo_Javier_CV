@@ -65,10 +65,11 @@
       <div class="sidebar__profile">
         <div class="profile-pic-wrapper float-hover">
           <div class="profile-pic">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="50" cy="38" r="22" fill="#4fc3f7"/>
-              <ellipse cx="50" cy="82" rx="30" ry="20" fill="#4fc3f7"/>
-            </svg>
+            <img
+              src="Image/Eduardo_Javier.jpeg"
+              alt="Eduardo Javier Oña Chiriboga"
+              class="profile-pic__img"
+            />
           </div>
           <div class="profile-pic__ring"></div>
         </div>
@@ -128,7 +129,7 @@
 
       <!-- Descargar CV -->
       <div class="sidebar__footer">
-        <a href="Eduardo_Javier_Oña_Chiriboga_CV.pdf" download class="btn-download">
+        <a href="Eduardo_Javier_CV/Eduardo_Javier_Oña_Chiriboga_CV.pdf" download class="btn-download">
           <i data-feather="download-cloud"></i>
           <span>Descargar CV (PDF)</span>
         </a>
@@ -213,9 +214,7 @@
             <span class="skill-tag">Arquitectura de Sistemas</span>
             <span class="skill-tag">Data Warehousing</span>
             <span class="skill-tag">SQL / Diseño de BD</span>
-            <span class="skill-tag">Sistemas ERP</span>
             <span class="skill-tag">Soporte TI</span>
-            <span class="skill-tag">Facturación Electrónica</span>
             <span class="skill-tag">Aprendizaje Continuo</span>
           </div>
         </div>
@@ -229,10 +228,10 @@
           <p class="section__subtitle">Una trayectoria forjada en desafíos técnicos del mundo real.</p>
         </div>
 
-        <div class="timeline">
+        <div class="timeline" id="experience-list">
 
           <!-- PUCESA -->
-          <div class="timeline__item glass-card">
+          <div class="timeline__item glass-card" data-date="2024-01">
             <div class="timeline__dot">
               <i data-feather="monitor"></i>
             </div>
@@ -255,7 +254,7 @@
           </div>
 
           <!-- Gasolinera -->
-          <div class="timeline__item glass-card">
+          <div class="timeline__item glass-card" data-date="2015-01">
             <div class="timeline__dot">
               <i data-feather="file-text"></i>
             </div>
@@ -278,7 +277,7 @@
           </div>
 
           <!-- Cafetería -->
-          <div class="timeline__item glass-card">
+          <div class="timeline__item glass-card" data-date="2018-01">
             <div class="timeline__dot">
               <i data-feather="users"></i>
             </div>
@@ -421,10 +420,10 @@
             <h3 class="speaking-area__title">
               <i data-feather="mic"></i> Ponencias &amp; Participación en Congresos
             </h3>
-            <div class="speaking-cards">
+            <div class="speaking-cards" id="speaking-list">
 
               <!-- IX Congreso 2024 -->
-              <div class="speaking-card speaking-item glass-card float-hover">
+              <div class="speaking-card speaking-item glass-card float-hover" data-date="2024-11">
                 <div class="speaking-card__badge">
                   <i data-feather="radio"></i>
                 </div>
@@ -444,7 +443,7 @@
               </div>
 
               <!-- VIII Seminario 2023 -->
-              <div class="speaking-card speaking-item glass-card float-hover">
+              <div class="speaking-card speaking-item glass-card float-hover" data-date="2023-06">
                 <div class="speaking-card__badge">
                   <i data-feather="award"></i>
                 </div>
@@ -463,7 +462,7 @@
               </div>
 
               <!-- VII Seminario 2022 -->
-              <div class="speaking-card speaking-item glass-card float-hover">
+              <div class="speaking-card speaking-item glass-card float-hover" data-date="2022-06">
                 <div class="speaking-card__badge">
                   <i data-feather="award"></i>
                 </div>
@@ -495,10 +494,10 @@
           <p class="section__subtitle">Formación continua y versatilidad como sello personal.</p>
         </div>
 
-        <div class="certs-grid">
+        <div class="certs-grid" id="certifications-grid">
 
           <!-- Cisco Get Connected -->
-          <div class="cert-card glass-card float-hover">
+          <div class="cert-card glass-card float-hover" data-date="2022-01">
             <div class="cert-card__header">
               <div class="cert-card__icon">
                 <i data-feather="wifi"></i>
@@ -518,7 +517,7 @@
           </div>
 
           <!-- Chef Profesional -->
-          <div class="cert-card glass-card float-hover">
+          <div class="cert-card glass-card float-hover" data-date="2019-01">
             <div class="cert-card__header">
               <div class="cert-card__icon">
                 <i data-feather="star"></i>

@@ -15,6 +15,7 @@
     initHamburger();
     initSkillStagger();
     initDynamicStats();   // ← counts DOM items at runtime
+    initAutoSort();       // ← sorts sortable containers by data-date
   });
 
   /* ─── SECTION NAVIGATION ───────────────────────────── */
@@ -210,6 +211,58 @@
       const count = document.querySelectorAll('.speaking-item').length;
       speakingEl.textContent = count;
     }
+  }
+
+  /* ─── AUTO-SORT BY DATE (Reverse Chronological) ──────── */
+  /**
+   * Sorts the direct children of each sortable container
+   * by their data-date="YYYY-MM" attribute, newest → oldest.
+   *
+   * Sortable containers (must have the matching id in HTML):
+   *   #experience-list        ← .timeline__item cards
+   *   #speaking-list          ← .speaking-item cards
+   *   #certifications-grid    ← .cert-card cards
+   *
+   * Usage: add data-date="YYYY-MM" to any item card, e.g.
+   *   <div class="timeline__item" data-date="2024-01"> ... </div>
+   *   <div class="speaking-item"  data-date="2024-11"> ... </div>
+   *   <div class="cert-card"      data-date="2022-01"> ... </div>
+   */
+  function initAutoSort() {
+    const SORTABLE_CONTAINERS = [
+      'experience-list',
+      'speaking-list',
+      'certifications-grid'
+    ];
+
+    /**
+     * Parse "YYYY-MM" → integer YYYYMM for numeric comparison.
+     * Returns 0 (sorts to bottom) if the attribute is missing/invalid.
+     */
+    function dateToInt(el) {
+      const raw = el.dataset.date;
+      if (!raw) return 0;
+      const parts = raw.split('-');
+      if (parts.length < 2) return parseInt(parts[0], 10) * 100 || 0;
+      return parseInt(parts[0], 10) * 100 + parseInt(parts[1], 10);
+    }
+
+    SORTABLE_CONTAINERS.forEach(containerId => {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      // Collect immediate children into an array
+      const items = Array.from(container.children);
+
+      // Sort descending (higher date value = newer = first)
+      items.sort((a, b) => dateToInt(b) - dateToInt(a));
+
+      // Re-append in sorted order (moves nodes — no cloning needed)
+      items.forEach((item, i) => {
+        item.style.animationDelay = `${i * 80}ms`;
+        container.appendChild(item);
+      });
+    });
   }
 
   /* ─── SKILL TAG STAGGER ────────────────────────────── */
